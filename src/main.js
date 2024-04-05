@@ -13,15 +13,15 @@ k.loadSprite ("spritesheet", "./spritesheet.png", {
         "walk-side": { from: 975, to: 978, loop: true, speed: 8 },
         "idle-up": 1014,
         "walk-up": { from: 1014, to: 1017, loop: true, speed: 8 },
-        "bag-open": 128
-    }
+        "bag-open": 128,
+    },
 });
 
 k.loadSprite ("map", "./map.png");
 
 k.setBackground (k.Color.fromHex ("#311047"));
 
-/* Creating a scene*/
+// Creating a scene
 
 k.scene ("main", async () => {
 
@@ -37,9 +37,9 @@ k.scene ("main", async () => {
 
     const player = k.make ([
         k.sprite ("spritesheet", { anim: "idle-down" }),
-        k.area ([ 
-            shape, new k.Rect (k.vec2(0, 3), 10, 10),
-        ]),
+        k.area ({ 
+            shape: new k.Rect (k.vec2(0, 3), 10, 10),
+        }),
         k.body (),
         k.anchor ("center"),
         k.pos (),
@@ -49,7 +49,7 @@ k.scene ("main", async () => {
             direction: "down",
             isInDialog: false,
         },
-        "player", // TODO: Player not appearing ???
+        "player",
     ]);
 
     for (const layer of layers) {
@@ -59,7 +59,7 @@ k.scene ("main", async () => {
                     k.area ({
                         shape: new k.Rect (k.vec2(0), boundary.width, boundary.height),
                     }),
-                    k.body ([isStatic = true]),
+                    k.body ({isStatic: true}),
                     k.pos (boundary.x, boundary.y),
                     boundary.name,
                 ]);
@@ -74,8 +74,8 @@ k.scene ("main", async () => {
             continue;
         }
 
-        if (layer.name == "Spawanpoint") {
-            for (const entitiy of layers.objects) {
+        if (layer.name == "Spawnpoint") {
+            for (const entitiy of layer.objects) {
                 if (entitiy.name == "player") {
                     player.pos = k.vec2(
                         (map.pos.x + entitiy.x) * scaleFactor,

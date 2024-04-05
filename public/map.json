@@ -449,20 +449,8 @@
         {
          "draworder":"topdown",
          "id":7,
-         "name":"player",
+         "name":"Objects",
          "objects":[
-                {
-                 "height":0,
-                 "id":36,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":40,
-                 "y":71
-                }, 
                 {
                  "height":19,
                  "id":37,
@@ -622,9 +610,32 @@
          "visible":false,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":8,
+         "name":"Spawnpoint",
+         "objects":[
+                {
+                 "height":0,
+                 "id":58,
+                 "name":"player",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":39,
+                 "y":71
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":false,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":8,
- "nextobjectid":58,
+ "nextlayerid":10,
+ "nextobjectid":60,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",

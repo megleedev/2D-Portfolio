@@ -1,2 +1,1 @@
-export const scaleFactor = 4;
-// TODO: TOO CLOSE
+export const scaleFactor = 2.5;
