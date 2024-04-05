@@ -1,5 +1,6 @@
 import { scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
+import { displayDialog } from "./utils";
 
 k.loadSprite ("spritesheet", "./spritesheet.png", {
 
@@ -27,7 +28,7 @@ k.scene ("main", async () => {
     const mapData = await (await fetch ("./map.json")).json ();
     const layers = mapData.layers;
 
-    const map = k.make ([
+    const map = k.add ([
         k.sprite ("map"),
         k.pos (0),
         // Controls the scale size of the map -- see constants.js
@@ -48,7 +49,7 @@ k.scene ("main", async () => {
             direction: "down",
             isInDialog: false,
         },
-        "player",
+        "player", // TODO: Player not appearing ???
     ]);
 
     for (const layer of layers) {
@@ -66,12 +67,30 @@ k.scene ("main", async () => {
                 if (boundary.name) {
                     player.onCollide(boundary.name, () => {
                         player.isInDialog = true;
-                        // TODO: Add dialog logic
-                    })
+                        displayDialog("TODO", () => player.isInDialog = false)
+                    });
+                }
+            }
+            continue;
+        }
+
+        if (layer.name == "Spawanpoint") {
+            for (const entitiy of layers.objects) {
+                if (entitiy.name == "player") {
+                    player.pos = k.vec2(
+                        (map.pos.x + entitiy.x) * scaleFactor,
+                        (map.pos.y + entitiy.y) * scaleFactor
+                    );
+                    k.add(player);
+                    continue;
                 }
             }
         }
     }
+
+    k.onUpdate(() => {
+        k.camPos(player.pos.x, player.pos.y + 100);
+    });
 });
 
 k.go ("main");
