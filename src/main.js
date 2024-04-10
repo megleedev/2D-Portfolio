@@ -30,7 +30,7 @@ k.scene ("main", async () => {
 
     const map = k.add ([
         k.sprite ("map"),
-        k.pos (0),
+        k.pos (0, 0),
         // Controls the scale size of the map -- see constants.js
         k.scale (scaleFactor)
     ]);
@@ -75,6 +75,7 @@ k.scene ("main", async () => {
         }
 
         if (layer.name == "Spawnpoint") {
+            console.log("Hello");
             for (const entitiy of layer.objects) {
                 if (entitiy.name == "player") {
                     player.pos = k.vec2(
