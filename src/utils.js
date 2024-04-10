@@ -20,7 +20,7 @@ export function displayDialog (text, onDisplayEnd) {
     }, 5);
 
     // Close button functionality
-    const closeButton = document.getElementById("close-button");
+    const closeButton = document.getElementById("close");
 
     function onCloseBtnClick() {
         onDisplayEnd();
@@ -31,6 +31,12 @@ export function displayDialog (text, onDisplayEnd) {
     }
 
     closeButton.addEventListener("click", onCloseBtnClick);
+
+    addEventListener("keypress", (key) => {
+        if (key.code === "Enter") {
+            closeButton.click();
+        }
+    });
 }
 
 // Resize for different screen sizes
