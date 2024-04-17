@@ -188,17 +188,6 @@
                  "y":114.090909090909
                 }, 
                 {
-                 "height":15.2727272727273,
-                 "id":19,
-                 "name":"desk",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":31,
-                 "x":160.909090909091,
-                 "y":95.9090909090909
-                }, 
-                {
                  "height":15.8181818181818,
                  "id":20,
                  "name":"",
@@ -289,7 +278,7 @@
                 {
                  "height":13.25,
                  "id":33,
-                 "name":"table",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -300,13 +289,35 @@
                 {
                  "height":14.125,
                  "id":34,
-                 "name":"lamp",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":8.25,
                  "x":276,
                  "y":80.125
+                }, 
+                {
+                 "height":10.875,
+                 "id":35,
+                 "name":"projects",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":13.5,
+                 "x":162.375,
+                 "y":95.75
+                }, 
+                {
+                 "height":10.875,
+                 "id":36,
+                 "name":"resume",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":12.125,
+                 "x":177.375,
+                 "y":95.625
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -362,7 +373,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":35,
+ "nextobjectid":37,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
