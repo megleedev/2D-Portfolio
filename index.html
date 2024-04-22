@@ -32,7 +32,7 @@
 
       #contact {
         position: absolute;
-        right: 5%;
+        right: 2%;
         top: 1vh;
         display: flex;
         flex-direction: column;
@@ -105,24 +105,115 @@
         font-size: inherit;
       }
 
-      .btn-cancel {
-        background: red;
-        color: white;
-      }
-
       .form-popup {
         display: none;
         position: fixed;
-        top: 0;
-        right: 0;
+        top: 10px;
+        right: 10px;
         border: 3px solid #f1f1f1;
         z-index: 9;
+        font-family: monogram, monospace;
+        color: rgb(238, 238, 238);
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 3px;
+        width: 20%;
+        padding: 0.5rem;
+        filter: drop-shadow(0 0 0.75rem rgb(112, 112, 112));
       }
 
       .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+      }
+
+      .form-container div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .form-container h1 {
+        margin: 0;
+        user-select: none;
+        color: silver;
+        padding: 1rem;
+      }
+
+      .header-container {
+        width: 100%;
+        text-align: center;
+      }
+
+      .form-container label {
+        font-size: 1rem;
+      }
+
+      .form-container input[type=name], .form-container input[type=email], .form-container textarea {
+        font-family: inherit;
+        border-style: none;
+        border-radius: 3px;
+        padding: 0.5rem;
+        font-size: inherit;
+        margin-top: 1rem;
+        width: 80%;
+      }
+
+      .form-container button[type=submit], .form-container button[type=cancel]{
+        box-sizing: content-box;
+        font-family: inherit;
+        border-style: none;
+        border-radius: 3px;
+        padding: 1rem;
+        font-size: inherit;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        line-height: 0.5;
+        flex: 1 0 auto;
+      }
+
+      .form-container button[type=submit] {
+        background: lightgreen;
+        color: white;
+      }
+
+      .form-container button[type=cancel] {
+        background: lightcoral;
+        color: white;
+      }
+
+      .form-container button[type="submit"]:hover, .form-container button[type="cancel"]:hover {
+        cursor: pointer;
+      }
+
+      .form-container textarea {
+        font-family: inherit;
+        border-style: none;
+        border-radius: 3px;
+        padding: 1rem;
+        font-size: inherit;
+        margin-top: 1rem;
+        width: 80%;
+        height: 100px;
+        resize: vertical;
+        max-height: 200px;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      .button-container button {
+        box-sizing: border-box;
+        flex: 1 0 auto;
+        margin: 0 10px;
+        width: calc(50% - 20px);
       }
 
       .note {
@@ -143,13 +234,26 @@
           <button class = "ui-popup-button">Click to contact me</button>
           <div class = "form-popup form-container" id = "contactForm">
             <form action = "https://formspree.io/f/mpzenlnw" method = "POST" class = "form-container">
-              <h1>Contact</h1>
+              <div class = "header-container">
+                <h1>Contact</h1>
+              </div>
+              <div>
+                <label for = "nameInput"><b>Name</b></label>
+                <input type = "name" placeholder = "Enter Name" name = "name" id="nameInput" required>
+              </div>
+              <div>
                 <label for = "emailInput"><b>Email</b></label>
                 <input type = "email" placeholder = "Enter Email" name = "email" id="emailInput" required>
-
-                <button type = "submit" class = "btn">Send</button>
-                <button type = "button" class = "btn-cancel" id="closeContactFormButton">Close</button>
-                </form>
+              </div>
+              <div>
+                <label for = "messageInput"><b>Message</b></label>
+                <textarea id = "messageInput" name = "message" rows = "4" cols = "50" placeholder = "Enter Message" required></textarea>
+              </div>
+              <div class = "button-container">
+                <button type = "submit">Send</button>
+                <button type = "cancel" id="closeContactFormButton">Cancel</button>
+              </div>
+            </form>
           </div>
         <div id = "textbox-container" style = "display: none">
           <div id = "textbox">

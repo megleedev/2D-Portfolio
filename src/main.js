@@ -182,6 +182,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Wait for the DOM to load before querying elements
 window.addEventListener('DOMContentLoaded', (event) => {
     
+    // Closes the contact form when the page loads
+    closeContactForm();
+    
     // Gets contact form buttons
     const openButton = document.querySelector('.ui-popup-button');
     const closeButton = document.querySelector('#closeContactFormButton');
