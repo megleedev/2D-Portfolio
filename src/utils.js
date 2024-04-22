@@ -50,3 +50,12 @@ export function setCamScale(k) {
 
     k.camScale(k.vec2(1.5));
 }
+
+// Functionality to open and close the contact form
+export function openContactForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+export function closeContactForm() {
+    document.getElementById("contactForm").style.display = "none";
+}
