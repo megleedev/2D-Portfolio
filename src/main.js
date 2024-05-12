@@ -9,13 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
         sliceX: 39,
         sliceY: 31,
         anims: {
-            "idle-down": 936,
-            "walk-down": { from: 936, to: 939, loop: true, speed: 8 },
-            "idle-side": 975,
-            "walk-side": { from: 975, to: 978, loop: true, speed: 8 },
-            "idle-up": 1014,
-            "walk-up": { from: 1014, to: 1017, loop: true, speed: 8 },
-            "bag-open": 128,
+            "idle-down": 952,
+            "walk-down": { from: 952, to: 955, loop: true, speed: 8 },
+            "idle-side": 991,
+            "walk-side": { from: 991, to: 994, loop: true, speed: 8 },
+            "idle-up": 1030,
+            "walk-up": { from: 1030, to: 1033, loop: true, speed: 8 },
         },
     });
 
